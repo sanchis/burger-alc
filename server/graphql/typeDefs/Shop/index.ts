@@ -4,6 +4,7 @@ const shopDefs = gql`
     type Shop{
         id: ID!
         name: String!
+        image: String
         address: String!
         active: Boolean!
     }

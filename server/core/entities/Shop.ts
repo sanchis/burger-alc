@@ -9,6 +9,7 @@ export interface UpdateShopEntity {
   name: string
   address: string
   active: boolean
+  image: string
 }
 
 export interface CreateShopEntity extends UpdateShopEntity{
