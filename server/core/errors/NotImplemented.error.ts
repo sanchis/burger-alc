@@ -1,7 +1,8 @@
-import { ApolloError } from 'apollo-server-micro'
+import BurgerRankingError from '../interfaces/BurgerRankingError'
 
-export class NotImplementedError extends ApolloError {
+export class NotImplementedError extends Error implements BurgerRankingError {
+  public readonly code = '501'
   constructor () {
-    super('Not implemented', '501')
+    super('Not implemented')
   }
 }

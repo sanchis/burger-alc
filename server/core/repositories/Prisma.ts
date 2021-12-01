@@ -2,7 +2,7 @@ import { PrismaClient } from '.prisma/client'
 
 declare const global: any
 export default class PrismaDb {
-  protected readonly db: PrismaClient
+  public readonly db: PrismaClient
   constructor () {
     if (process.env.NODE_ENV === 'production') {
       this.db = new PrismaClient()

@@ -1,7 +1,8 @@
-import { ApolloError } from 'apollo-server-micro'
+import BurgerRankingError from '../interfaces/BurgerRankingError'
 
-export class ElementNotFoundError extends ApolloError {
+export class ElementNotFoundError extends Error implements BurgerRankingError {
+  public readonly code = '404'
   constructor () {
-    super('Element not found', '404')
+    super('Element not found')
   }
 }

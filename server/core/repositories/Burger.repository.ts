@@ -1,5 +1,5 @@
 import { BurgerEntity, CreateBurgerEntity, UniqueBurgerEntity, UpdateBurgerEntity } from '../entities/Burger'
-import PrismaCodeToError from '../errors/PrismaErrors'
+import PrismaCodeToError from '../../../prisma/PrismaErrors'
 import BurgerRepository from '../interfaces/BurgerRepository'
 import PrismaDb from './Prisma'
 

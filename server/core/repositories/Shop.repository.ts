@@ -1,5 +1,5 @@
 import { CreateShopEntity, ShopEntity, UniqueShopEntity, UpdateShopEntity } from '../entities/Shop'
-import PrismaCodeToError from '../errors/PrismaErrors'
+import PrismaCodeToError from '../../../prisma/PrismaErrors'
 import ShopRepository from '../interfaces/ShopRepository'
 import PrismaDb from './Prisma'
 
