@@ -1,4 +1,4 @@
-import { Mark } from '.prisma/client'
+import { Mark } from '@prisma/client'
 
 export interface MarkEntity extends Mark {
 

@@ -17,10 +17,10 @@ export default class BurgerPrismaRepository extends PrismaDb implements MarkRepo
   }
 
   async getById (params: UniqueMarkEntity): Promise<MarkEntity |null > {
-    return this.db.mark.findUnique({ where: params })
+    return await this.db.mark.findUnique({ where: params })
   }
 
   async getAll (): Promise<MarkEntity[]> {
-    return this.db.mark.findMany()
+    return await this.db.mark.findMany()
   }
 }

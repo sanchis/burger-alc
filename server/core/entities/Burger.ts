@@ -1,4 +1,4 @@
-import { Burger } from '.prisma/client'
+import { Burger } from '@prisma/client'
 
 export interface BurgerEntity extends Burger {
 }

@@ -1,4 +1,4 @@
-import { Shop } from '.prisma/client'
+import { Shop } from '@prisma/client'
 
 export interface ShopEntity extends Shop{
 
