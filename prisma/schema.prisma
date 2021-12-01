@@ -22,7 +22,7 @@ model Shop {
 
 model Burger {
   id     String @id @default(uuid())
-  shop   Shop   @relation(fields: [shopId], references: [id])
+  shop   Shop   @relation(fields: [shopId], references: [id], onDelete: Cascade)
   shopId String
   name   String
   marks  Mark[]
@@ -34,6 +34,6 @@ model Mark {
   id       String  @id @default(uuid())
   mark     Decimal
   comment  String
-  burguer  Burger  @relation(fields: [burgerId], references: [id])
+  burguer  Burger  @relation(fields: [burgerId], references: [id], onDelete: Cascade)
   burgerId String
 }
