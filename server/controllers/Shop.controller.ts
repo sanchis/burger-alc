@@ -20,3 +20,7 @@ export async function updateShop (params: UpdateShopEntity): Promise<ShopEntity>
 export async function deleteShop (params: UniqueShopEntity): Promise<ShopEntity|null> {
   return await ShopService.delete(params)
 }
+
+export async function getShopListActive (): Promise<ShopEntity[]> {
+  return await ShopService.getAllActive()
+}

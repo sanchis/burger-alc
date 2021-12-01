@@ -30,4 +30,8 @@ export default class ShopPrismaRepository extends PrismaDb implements ShopReposi
   async getAll (): Promise<ShopEntity[]> {
     return await this.db.shop.findMany()
   }
+
+  async getAllActive (): Promise<ShopEntity[]> {
+    return await this.db.shop.findMany({ where: { active: true } })
+  }
 }

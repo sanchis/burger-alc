@@ -9,6 +9,10 @@ export default class ShopService {
     return await this.repository.getAll()
   }
 
+  async getAllActive (): Promise<ShopEntity[]> {
+    return await this.repository.getAllActive()
+  }
+
   async findById (params: UniqueShopEntity): Promise<ShopEntity| null> {
     return await this.repository.getById(params)
   }

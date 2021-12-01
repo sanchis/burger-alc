@@ -8,6 +8,7 @@ const typeDefs = gql`
 
     type Query {
         shops: [Shop]!
+        shopsActive: [Shop]!
         shop(id: ID!): Shop
         burgers: [Burger]!
         burger(id: ID!): Burger
