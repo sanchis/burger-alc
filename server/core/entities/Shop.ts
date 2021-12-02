@@ -8,6 +8,7 @@ export interface UpdateShopEntity {
   id: string
   name: string
   address: string
+  description: string
   active: boolean
   image: string
 }
