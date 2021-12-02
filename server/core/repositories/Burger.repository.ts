@@ -23,6 +23,14 @@ export default class BurgerPrismaRepository extends PrismaDb implements BurgerRe
     return await this.db.burger.findUnique({ where: params })
   }
 
+  async getByShopId (shopId: string): Promise<BurgerEntity[]> {
+    return await this.db.burger.findMany({
+      where: {
+        shopId
+      }
+    })
+  }
+
   async getAll (): Promise<BurgerEntity[]> {
     return await this.db.burger.findMany()
   }

@@ -13,6 +13,10 @@ export default class ShopService {
     return await this.repository.getById(params)
   }
 
+  async findByShopId (shopId: string): Promise<BurgerEntity[]> {
+    return await this.repository.getByShopId(shopId)
+  }
+
   async create (params: CreateBurgerEntity): Promise<BurgerEntity> {
     return await this.repository.create(params)
   }

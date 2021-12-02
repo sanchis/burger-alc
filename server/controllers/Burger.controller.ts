@@ -9,6 +9,10 @@ export async function getBurgerById (params: UniqueBurgerEntity): Promise<Burger
   return await BurgerService.findById(params)
 }
 
+export async function getBurgerByShopId (shopId: string): Promise<BurgerEntity[]> {
+  return await BurgerService.findByShopId(shopId)
+}
+
 export async function createBurger (params: CreateBurgerEntity): Promise<BurgerEntity> {
   return await BurgerService.create(params)
 }

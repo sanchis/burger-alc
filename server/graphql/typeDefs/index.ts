@@ -12,6 +12,7 @@ const typeDefs = gql`
         shop(id: ID!): Shop
         burgers: [Burger]!
         burger(id: ID!): Burger
+        burgerInShop(shopId: ID!): [Burger]!
     }
 
     type Mutation {
