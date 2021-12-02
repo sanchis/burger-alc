@@ -11,14 +11,15 @@ datasource db {
 }
 
 model Shop {
-  id        String   @id @default(uuid())
-  name      String   @unique
-  address   String
-  image     String?
-  active    Boolean  @default(true)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  burgers   Burger[]
+  id          String   @id @default(uuid())
+  name        String   @unique
+  address     String
+  image       String?
+  description String?
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  burgers     Burger[]
 }
 
 model Burger {
