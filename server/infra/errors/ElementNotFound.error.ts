@@ -1,4 +1,4 @@
-import BurgerRankingError from '../interfaces/BurgerRankingError'
+import BurgerRankingError from 'server/domain/BurgerRankingError'
 
 export class ElementNotFoundError extends Error implements BurgerRankingError {
   public readonly code = '404'

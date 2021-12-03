@@ -1,7 +1,7 @@
-import { CreateShopEntity, ShopEntity, UniqueShopEntity, UpdateShopEntity } from '../entities/Shop'
 import PrismaCodeToError from '../../../prisma/PrismaErrors'
-import ShopRepository from '../interfaces/ShopRepository'
 import PrismaDb from './Prisma'
+import ShopRepository from 'server/domain/ShopRepository'
+import { UpdateShopEntity, ShopEntity, UniqueShopEntity, CreateShopEntity } from 'server/domain/entities/Shop'
 
 export default class ShopPrismaRepository extends PrismaDb implements ShopRepository {
   async update (params: UpdateShopEntity): Promise<ShopEntity> {

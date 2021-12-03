@@ -1,5 +1,5 @@
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime'
-import { AlreadyExistError, ElementNotFoundError } from '../server/core/errors'
+import { AlreadyExistError, ElementNotFoundError } from '../server/infra/errors'
 
 export default function PrismaCodeToError (error: PrismaClientKnownRequestError): any {
   const errorMatcher = {

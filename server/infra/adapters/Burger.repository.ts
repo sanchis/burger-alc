@@ -1,6 +1,6 @@
 import PrismaCodeToError from 'prisma/PrismaErrors'
-import { BurgerEntity, CreateBurgerEntity, UniqueBurgerEntity, UpdateBurgerEntity } from '../entities/Burger'
-import BurgerRepository from '../interfaces/BurgerRepository'
+import { BurgerEntity, CreateBurgerEntity, UniqueBurgerEntity, UpdateBurgerEntity } from '../../domain/entities/Burger'
+import BurgerRepository from '../../domain/BurgerRepository'
 import PrismaDb from './Prisma'
 
 export default class BurgerPrismaRepository extends PrismaDb implements BurgerRepository {

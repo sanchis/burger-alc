@@ -1,4 +1,4 @@
-import { BurgerEntity, CreateBurgerEntity, UniqueBurgerEntity, UpdateBurgerEntity } from '../entities/Burger'
+import { BurgerEntity, CreateBurgerEntity, UniqueBurgerEntity, UpdateBurgerEntity } from './entities/Burger'
 
 export default interface BurgerRepository {
   update: (params: UpdateBurgerEntity) => Promise<BurgerEntity>

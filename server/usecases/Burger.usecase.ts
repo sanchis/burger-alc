@@ -1,7 +1,7 @@
-import { BurgerEntity, CreateBurgerEntity, UniqueBurgerEntity, UpdateBurgerEntity } from '../entities/Burger'
-import BurgerRepository from '../interfaces/BurgerRepository'
+import { BurgerEntity, CreateBurgerEntity, UniqueBurgerEntity, UpdateBurgerEntity } from '../domain/entities/Burger'
+import BurgerRepository from '../domain/BurgerRepository'
 
-export default class ShopService {
+export default class ShopUseCase {
   constructor (private readonly repository: BurgerRepository) {
   }
 

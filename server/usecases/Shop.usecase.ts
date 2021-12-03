@@ -1,5 +1,5 @@
-import { CreateShopEntity, ShopEntity, UniqueShopEntity, UpdateShopEntity } from '../entities/Shop'
-import ShopRepository from '../interfaces/ShopRepository'
+import { ShopEntity, UniqueShopEntity, CreateShopEntity, UpdateShopEntity } from 'server/domain/entities/Shop'
+import ShopRepository from 'server/domain/ShopRepository'
 
 export default class ShopService {
   constructor (private readonly repository: ShopRepository) {
