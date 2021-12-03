@@ -4,10 +4,11 @@ const shopDefs = gql`
     type Shop{
         id: ID!
         name: String!
-        description: String
-        image: String
         address: String!
         active: Boolean!
+        description: String
+        image: String
+        gMapsHash: String
     }
 `
 export default shopDefs

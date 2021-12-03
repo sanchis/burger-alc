@@ -1,6 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
-
+// TODO create a separate db for teting
 generator client {
   provider = "prisma-client-js"
 }
@@ -16,6 +16,7 @@ model Shop {
   address     String
   image       String?
   description String?
+  gMapsHash   String?
   active      Boolean  @default(true)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt

@@ -8,9 +8,10 @@ export interface UpdateShopEntity {
   id: string
   name: string
   address: string
-  description: string
   active: boolean
+  description: string
   image: string
+  gMapsHash: string
 }
 
 export interface CreateShopEntity extends UpdateShopEntity{
