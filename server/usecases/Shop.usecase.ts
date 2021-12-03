@@ -1,7 +1,7 @@
 import { ShopEntity, UniqueShopEntity, CreateShopEntity, UpdateShopEntity } from 'server/domain/entities/Shop'
 import ShopRepository from 'server/domain/ShopRepository'
 
-export default class ShopService {
+export default class ShopUseCase {
   constructor (private readonly repository: ShopRepository) {
   }
 
