@@ -1,25 +1,31 @@
-import ShopDetail from 'front/components/ShopDetail'
+import { Burger } from '.prisma/client'
+import { Shop } from 'front/domain/entities/Shop'
+import ShopDetail from 'front/infra/ui/react/components/ShopDetail'
+import { BurgerUseCase, ShopUseCase } from 'front/usecases'
 import { GetServerSideProps } from 'next'
 import React, { ReactElement } from 'react'
 
 interface Props {
-  id: string
+  shop: Shop
+  burgers: Burger[]
 }
 
-export default function Detail ({ id }: Props): ReactElement {
+export default function Detail ({ shop, burgers }: Props): ReactElement {
   return (
     <>
-      {id
-        ? <ShopDetail id={id} />
-        : null}
+      {shop !== null
+        ? <ShopDetail shop={shop} burgers={burgers} />
+        : 'Shop not found'}
     </>
   )
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+  const shopId = context?.params?.id as string
   return {
     props: {
-      id: context.params?.id
+      shop: await ShopUseCase.findShop(shopId),
+      burgers: await BurgerUseCase.findBurgerInShop(shopId)
     }
   }
 }

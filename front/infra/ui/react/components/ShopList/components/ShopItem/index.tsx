@@ -1,19 +1,19 @@
 import Icon from '@chakra-ui/icon'
 import { Image } from '@chakra-ui/image'
 import { Divider, Heading, HStack, Stack, Text } from '@chakra-ui/layout'
-import { ShopListModel } from 'front/models/ShopList'
 import { ReactElement } from 'react'
 import { MdLocationOn } from 'react-icons/md'
 import NextLink from 'next/link'
+import { Shop } from 'front/domain/entities/Shop'
 
 interface Props {
-  shop: ShopListModel
+  shop: Shop
   key?: string
 }
 
 export default function ShopItem ({ shop }: Props): ReactElement {
   return (
-    <NextLink href={`shop/${shop.id}`} passHref>
+    <NextLink href={`/shop/${shop.id}`} passHref>
       <Stack
         key={shop.id} borderColor='brand.500' borderWidth='1px' cursor='pointer' boxShadow=''
         _hover={{

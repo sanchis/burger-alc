@@ -1,20 +1,18 @@
+import { Burger } from 'front/domain/entities/Burger'
+import { Shop } from 'front/domain/entities/Shop'
 import { ReactElement } from 'react'
-import { useBurgerInShop } from './hooks/useBurgerInShop'
-import { useShopDetail } from './hooks/useShopDetail'
 
 interface Props{
-  id: string
+  shop: Shop
+  burgers: Burger[]
 }
 
-export default function ShopDetail ({ id }: Props): ReactElement {
-  const { shop } = useShopDetail(id)
-  const { burgers } = useBurgerInShop(id)
-
+export default function ShopDetail ({ shop, burgers }: Props): ReactElement {
   // TODO move map to component
   return (
     <>
       {JSON.stringify(shop)}<br />
-      {JSON.stringify(burgers)}
+      {JSON.stringify(burgers)}<br />
 
       {shop?.gMapsHash !== null && shop?.gMapsHash !== undefined && shop?.gMapsHash !== ''
         ? <iframe
