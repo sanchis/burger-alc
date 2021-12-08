@@ -1,10 +1,7 @@
-import { UniqueShopEntity, ShopEntity, UpdateShopEntity, CreateShopEntity } from './entities/Shop'
+import { UniqueShopEntity, ShopEntity } from './entities/Shop'
 
 export default interface ShopRepository {
   getById: (params: UniqueShopEntity) => Promise<ShopEntity | null>
   getAll: () => Promise<ShopEntity[]>
   getAllActive: () => Promise<ShopEntity[]>
-  update: (params: UpdateShopEntity) => Promise<ShopEntity>
-  delete: (params: UniqueShopEntity) => Promise<ShopEntity | null>
-  create: (obj: CreateShopEntity) => Promise<ShopEntity>
 }
