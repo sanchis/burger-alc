@@ -24,11 +24,14 @@ model Shop {
 }
 
 model Burger {
-  id     String @id @default(uuid())
-  shop   Shop   @relation(fields: [shopId], references: [id], onDelete: Cascade)
-  shopId String
-  name   String
-  marks  Mark[]
+  id          String   @id @default(uuid())
+  shop        Shop     @relation(fields: [shopId], references: [id], onDelete: Cascade)
+  shopId      String
+  name        String
+  description String
+  image       String?
+  price       Decimal?
+  marks       Mark[]
 
   @@unique([shopId, name])
 }

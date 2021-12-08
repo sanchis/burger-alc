@@ -7,7 +7,61 @@ const shops: Prisma.Enumerable<Prisma.ShopCreateInput> = [
     address: 'C. San Fernando, 18, 03002 Alicante',
     image: 'https://scontent.falc2-1.fna.fbcdn.net/v/t1.6435-9/106792004_10157089181447274_5243216013774561758_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=973b4a&_nc_ohc=iYgsojqK_F8AX-TojLy&_nc_ht=scontent.falc2-1.fna&oh=06c3e2a4c21c5a88e99f7dae33033fbc&oe=61CFDD63',
     description: '3BK es el Tribeca de siempre, ya que conserva intacta su tradición de salchichería alemana y hamburguesa gourmet, pero ahora también ofrece las mejores ensaladas y productos saludables. El lugar perfecto para relajarse y disfrutar de una comida sana en buena compañía.',
-    gMapsHash: '!1m18!1m12!1m3!1d3129.211066660335!2d-0.48454898450524675!3d38.344096579659876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6237b1723c5bdf%3A0x2bd6773b0d8415ba!2sTribeca!5e0!3m2!1ses!2ses!4v1638536078719!5m2!1ses!2ses'
+    gMapsHash: '!1m18!1m12!1m3!1d3129.211066660335!2d-0.48454898450524675!3d38.344096579659876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6237b1723c5bdf%3A0x2bd6773b0d8415ba!2sTribeca!5e0!3m2!1ses!2ses!4v1638536078719!5m2!1ses!2ses',
+    burgers: {
+      create: [
+        {
+          name: 'De la casa',
+          description: 'De vaca. Con queso cheddar, lechuga, tomate, cebolla cruda y mayonesa. En pan de hamburguesa ligero',
+          image: 'https://foodyt.com/media/uploads/Hamburguesa_de_la_casa.jpg'
+        },
+        {
+          name: 'Americana',
+          description: 'De vaca. Con huevo frito, bacon, queso cheddar, lechuga, tomate, cebolla asada, pepinillo y mayonesa. En pan de hamburguesa ligero',
+          image: 'https://foodyt.com/media/uploads/Hamburguesa_Americana.jpg'
+        },
+        {
+          name: 'Mexicana',
+          description: 'De vaca. Con guacamole, queso Monterrey, maíz, lechuga, tomates cherry asados, jalapeños y alioli de rocoto. En pan de hamburguesa ligero ',
+          image: 'https://foodyt.com/media/uploads/Hamburguesa_Mexica.jpg'
+        },
+        {
+          name: 'Italiana',
+          description: 'De vaca. Con burrata, tomates cherry asados, cebolla asada, rúcula y queso parmesano. En pan de cristal ',
+          image: 'https://foodyt.com/media/uploads/Hamburguesa_Italiana.jpg'
+        },
+        {
+          name: 'Royal',
+          description: 'De vaca. Con foie, trufa negra, queso brie y cebolla al moscatel. En pan brioche',
+          image: 'https://foodyt.com/media/uploads/Hamburguesa_Royal.jpg'
+        },
+        {
+          name: 'Japonesa',
+          description: 'Atún rojo, alga wakame, cebolla a la plancha , mayonesa de kimchi y espuma de wasabi. En pan de hamburguesa ligero',
+          image: 'https://foodyt.com/media/uploads/japonesa.jpg'
+        },
+        {
+          name: 'Contramuslo de pollo en marinada 3BK',
+          description: 'Con pico de gallo, espinacas, maíz, tomates cherry asados y mayonesa de ají amarillo. En pan de cristal',
+          image: 'https://foodyt.com/media/uploads/Hamburguesa_de_Pollo.jpg'
+        },
+        {
+          name: 'Cerdo ibérico ecológico',
+          description: 'Con pimiento rojo, berenjena, cebolla, bacon y queso manchego. En pan de hamburguesa ligero',
+          image: 'https://foodyt.com/media/uploads/Cerdo_Iberico_Ecologico.jpg'
+        },
+        {
+          name: 'Cordero asado',
+          description: 'Con lechuga, tomate, pepino y salsa Tzatziki. En pan de cristal',
+          image: 'https://foodyt.com/media/uploads/HAMBURGUESA_DE_CORDERO.jpeg'
+        },
+        {
+          name: 'Vegano',
+          description: 'Con pastel de lentejas amarillas, calabaza, pimientos, zanahoria y jengibre; con tomate, cebolla, espinacas y berenjena. En pan proteico.',
+          image: 'https://foodyt.com/media/uploads/vegano.jpg'
+        }
+      ]
+    }
   },
   {
     name: 'Tepuy',
