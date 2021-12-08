@@ -1,10 +1,12 @@
 import { burgerQueries } from './Burger'
+import { markQueries } from './Mark'
 import { shopQueries } from './Shop'
 
 const resolvers = {
   Query: {
     ...shopQueries,
-    ...burgerQueries
+    ...burgerQueries,
+    ...markQueries
   }
 }
 export default resolvers
