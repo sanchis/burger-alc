@@ -1,24 +1,8 @@
-import PrismaCodeToError from 'prisma/PrismaErrors'
-import { BurgerEntity, CreateBurgerEntity, UniqueBurgerEntity, UpdateBurgerEntity } from '../../domain/entities/Burger'
+import { BurgerEntity, UniqueBurgerEntity } from '../../domain/entities/Burger'
 import BurgerRepository from '../../domain/BurgerRepository'
 import PrismaDb from './Prisma'
 
 export default class BurgerPrismaRepository extends PrismaDb implements BurgerRepository {
-  async create (obj: CreateBurgerEntity): Promise<BurgerEntity> {
-    return await this.db.burger.create({ data: obj })
-  }
-
-  async update (params: UpdateBurgerEntity): Promise<BurgerEntity> {
-    const { id, ...rest } = params
-    return await this.db.burger.update({ data: rest, where: { id } })
-      .catch(PrismaCodeToError)
-  }
-
-  async delete (uniqueParams: UniqueBurgerEntity): Promise<BurgerEntity> {
-    return await this.db.burger.delete({ where: uniqueParams })
-      .catch(PrismaCodeToError)
-  }
-
   async getById (params: UniqueBurgerEntity): Promise<BurgerEntity |null > {
     return await this.db.burger.findUnique({ where: params })
   }
