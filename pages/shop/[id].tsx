@@ -1,4 +1,4 @@
-import { Burger } from '.prisma/client'
+import { Burger } from 'front/domain/entities/Burger'
 import { Shop } from 'front/domain/entities/Shop'
 import ShopDetail from 'front/infra/ui/react/components/ShopDetail'
 import { BurgerUseCase, ShopUseCase } from 'front/usecases'

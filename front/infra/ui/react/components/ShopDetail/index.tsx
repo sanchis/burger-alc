@@ -1,8 +1,10 @@
+import { Accordion } from '@chakra-ui/accordion'
 import { Image } from '@chakra-ui/image'
 import { Divider, Heading, Stack, Text } from '@chakra-ui/layout'
 import { Burger } from 'front/domain/entities/Burger'
 import { Shop } from 'front/domain/entities/Shop'
 import { ReactElement } from 'react'
+import BurgerItem from './components/Burger'
 
 interface Props{
   shop: Shop
@@ -13,7 +15,7 @@ export default function ShopDetail ({ shop, burgers }: Props): ReactElement {
   // TODO move map to component
   return (
     <Stack spacing='6'>
-      <Image src={shop.image} alt={`logo of ${shop.name}`} width='100%' h='300px' objectPosition='center' fit='cover' />
+      <Image src={shop.image} alt={`logo of ${shop.name}`} width='100%' h='300px' objectPosition='center' fit='none' />
       <div>
         <Heading>{shop.name}</Heading>
         <Divider />
@@ -21,7 +23,7 @@ export default function ShopDetail ({ shop, burgers }: Props): ReactElement {
       </div>
 
       <div>
-        <Heading size='lg'>Donde estamos</Heading>
+        <Heading size='lg'>Donde estamos?</Heading>
         <Divider mb='2' />
         {shop?.gMapsHash !== null && shop?.gMapsHash !== undefined && shop?.gMapsHash !== ''
           ? <iframe
@@ -34,11 +36,9 @@ export default function ShopDetail ({ shop, burgers }: Props): ReactElement {
       <div>
         <Heading size='lg'>Hamburguesas </Heading>
         <Divider />
-        <Stack>
-          {burgers.map(burger =>
-            <p key={burger.id}>{burger.name}</p>
-          )}
-        </Stack>
+        <Accordion allowToggle>
+          {burgers.map(burger => <BurgerItem key={burger.id} burger={burger} />)}
+        </Accordion>
       </div>
 
     </Stack>
