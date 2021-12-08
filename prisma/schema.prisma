@@ -37,9 +37,11 @@ model Burger {
 }
 
 model Mark {
-  id       String  @id @default(uuid())
-  mark     Decimal
-  comment  String
-  burguer  Burger  @relation(fields: [burgerId], references: [id], onDelete: Cascade)
-  burgerId String
+  id        String   @id @default(uuid())
+  mark      Decimal
+  comment   String
+  burguer   Burger   @relation(fields: [burgerId], references: [id], onDelete: Cascade)
+  burgerId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
