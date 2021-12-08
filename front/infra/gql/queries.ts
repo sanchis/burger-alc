@@ -27,6 +27,19 @@ query Query($shopId: ID!) {
   burgerInShop(shopId: $shopId) {
     id
     name
+    description
+    image
+    price
   }
 }
 `
+
+export const MARK_IN_BURGER = `
+query MarksInBurger($burgerId: String!) {
+  marksInBurger(burgerId: $burgerId) {
+    id
+    mark
+    comment
+    createAt
+  }
+}`
