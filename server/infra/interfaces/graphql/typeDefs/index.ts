@@ -1,18 +1,14 @@
 import { gql } from 'apollo-server-micro'
-import burgerDefs from './Burger'
-import shopDefs from './Shop'
+import { burgerTypes, burgerQueries } from './Burger'
+import { shopQueries, shopTypes } from './Shop'
 
 const typeDefs = gql`
-    ${burgerDefs}
-    ${shopDefs}
+    ${burgerTypes}
+    ${shopTypes}
 
     type Query {
-        shops: [Shop]!
-        shopsActive: [Shop]!
-        shop(id: ID!): Shop
-        burgers: [Burger]!
-        burger(id: ID!): Burger
-        burgerInShop(shopId: ID!): [Burger]!
+        ${shopQueries}
+        ${burgerQueries}
     }
 `
 export default typeDefs
