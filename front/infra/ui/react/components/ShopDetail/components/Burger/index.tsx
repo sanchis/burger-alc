@@ -1,15 +1,20 @@
 import { AccordionButton, AccordionItem, AccordionPanel } from '@chakra-ui/accordion'
+import { Button } from '@chakra-ui/button'
 import { Image } from '@chakra-ui/image'
 import { Flex, Text } from '@chakra-ui/layout'
+import { useDisclosure } from '@chakra-ui/react'
 import { Burger } from 'front/domain/entities/Burger'
 import React, { ReactElement } from 'react'
 import BurgerMarks from './components/BurgerMarks'
+import ModalCreateMark from './components/ModalCreateMark'
 
 interface Props{
   burger: Burger
   key?: string
 }
 export default function BurgerComponent ({ burger }: Props): ReactElement {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
   return (
     <AccordionItem
       key={burger.id} mb='2' mt='2'
@@ -26,6 +31,8 @@ export default function BurgerComponent ({ burger }: Props): ReactElement {
               <Text ml='2' flex='1'>{burger.description}</Text>
             </Flex>
           </AccordionButton>
+          <Button w='100%' onClick={onOpen}>Crear reseña</Button>
+          <ModalCreateMark isOpen={isOpen} onClose={onClose} burger={burger} />
           <AccordionPanel pb={4}>
             <BurgerMarks burger={burger} expanded={isExpanded} />
           </AccordionPanel>

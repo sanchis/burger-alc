@@ -14,6 +14,8 @@ export default function BurgerMarks ({ burger, expanded }: Props): ReactElement 
   useEffect(() => {
     if (expanded) {
       fetch()
+
+      // TODO clear marks on collapse
     }
   }, [expanded])
   return (
