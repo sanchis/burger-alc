@@ -5,3 +5,7 @@ export interface Burger{
   description?: string
   image?: string
 }
+
+export interface BurgerInShop extends Burger{
+  numberOfMarks: number
+}

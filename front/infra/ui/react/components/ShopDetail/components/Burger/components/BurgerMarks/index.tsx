@@ -1,11 +1,11 @@
 import { Center, Divider, Heading } from '@chakra-ui/layout'
 import { Spinner } from '@chakra-ui/spinner'
-import { Burger } from 'front/domain/entities/Burger'
+import { BurgerInShop } from 'front/domain/entities/Burger'
 import { ReactElement, useEffect } from 'react'
 import { useMarkByBurger } from './hooks/useMarkByBurger'
 
 interface Props{
-  burger: Burger
+  burger: BurgerInShop
   expanded: boolean
 }
 

@@ -1,13 +1,13 @@
-import { Burger } from 'front/domain/entities/Burger'
+import { BurgerInShop } from 'front/domain/entities/Burger'
 import { Shop } from 'front/domain/entities/Shop'
 import ShopDetail from 'front/infra/ui/react/components/ShopDetail'
 import { BurgerUseCase, ShopUseCase } from 'front/usecases'
 import { GetServerSideProps } from 'next'
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 
 interface Props {
   shop: Shop
-  burgers: Burger[]
+  burgers: BurgerInShop[]
 }
 
 export default function Detail ({ shop, burgers }: Props): ReactElement {

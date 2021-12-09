@@ -1,14 +1,14 @@
 import { Accordion } from '@chakra-ui/accordion'
 import { Image } from '@chakra-ui/image'
 import { Divider, Heading, Stack, Text } from '@chakra-ui/layout'
-import { Burger } from 'front/domain/entities/Burger'
+import { BurgerInShop } from 'front/domain/entities/Burger'
 import { Shop } from 'front/domain/entities/Shop'
 import { ReactElement } from 'react'
 import BurgerItem from './components/Burger'
 
 interface Props{
   shop: Shop
-  burgers: Burger[]
+  burgers: BurgerInShop[]
 }
 
 export default function ShopDetail ({ shop, burgers }: Props): ReactElement {

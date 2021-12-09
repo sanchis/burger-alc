@@ -30,6 +30,7 @@ query Query($shopId: ID!) {
     description
     image
     price
+    numberOfMarks
   }
 }
 `

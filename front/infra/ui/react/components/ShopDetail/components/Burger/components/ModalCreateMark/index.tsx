@@ -1,4 +1,4 @@
-import { Burger } from 'front/domain/entities/Burger'
+import { BurgerInShop } from 'front/domain/entities/Burger'
 import { ReactElement } from 'react'
 import { Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay } from '@chakra-ui/react'
 import CreateMarkForm from 'front/infra/ui/react/components/CreateMarkForm'
@@ -6,7 +6,7 @@ import CreateMarkForm from 'front/infra/ui/react/components/CreateMarkForm'
 interface Props{
   isOpen: boolean
   onClose: () => void
-  burger: Burger
+  burger: BurgerInShop
 }
 
 export default function ModalCreateMark ({ onClose, isOpen, burger }: Props): ReactElement {
