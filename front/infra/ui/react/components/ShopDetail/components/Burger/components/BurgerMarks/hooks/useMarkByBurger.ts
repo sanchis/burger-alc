@@ -1,18 +1,18 @@
 import { Mark } from 'front/domain/entities/Mark'
-import { useCaller } from 'front/infra/ui/react/hooks/useCaller'
+import { useLazyCaller } from 'front/infra/ui/react/hooks/useLazyCaller'
 import { MarkUseCase } from 'front/usecases'
 
 interface HookModel{
   marks: Mark[]
   loading: boolean
-  fetch: () => void
+  run: (burgerId: string) => void
 }
-export function useMarkByBurger (burgerId: string): HookModel {
-  const { data, fetch, loading } = useCaller(async () => await MarkUseCase.findMarksByBurgerId(burgerId), false)
+export function useMarkByBurger (): HookModel {
+  const { data, run, loading } = useLazyCaller<Mark[], string>(async (burgerId: string) => await MarkUseCase.findMarksByBurgerId(burgerId))
 
   return {
     loading,
-    fetch,
+    run,
     marks: data ?? []
   }
 }

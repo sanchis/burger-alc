@@ -10,11 +10,10 @@ interface Props{
 }
 
 export default function BurgerMarks ({ burger, expanded }: Props): ReactElement {
-  const { fetch, marks, loading } = useMarkByBurger(burger.id)
+  const { run, marks, loading } = useMarkByBurger()
   useEffect(() => {
     if (expanded) {
-      fetch()
-
+      run(burger.id)
       // TODO clear marks on collapse
     }
   }, [expanded])
