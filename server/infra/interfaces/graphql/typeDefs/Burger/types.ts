@@ -8,5 +8,14 @@ const burgerDefs = gql`
         image: String
         price: String
     }
+
+    type BurgerInShop{
+        id: ID!
+        name: String!
+        description: String
+        image: String
+        price: String
+        numberOfMarks: Int!
+    } 
 `
 export default burgerDefs

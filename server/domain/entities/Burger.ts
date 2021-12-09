@@ -17,3 +17,6 @@ export interface UpdateBurgerEntity{
 }
 
 export interface CreateBurgerEntity extends UpdateBurgerEntity{}
+export interface BurgerListEntity extends Burger{
+  numberOfMarks: number
+}
