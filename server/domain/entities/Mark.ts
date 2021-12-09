@@ -11,7 +11,7 @@ export interface UpdateMarkEntity {
 }
 
 export interface CreateMarkEntity extends UpdateMarkEntity{
-  burgerId: string
+
 }
 
 export interface UniqueMarkEntity{

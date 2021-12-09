@@ -1,5 +1,5 @@
 import { burgerQueries } from './Burger'
-import { markQueries } from './Mark'
+import { markQueries, markMutations } from './Mark'
 import { shopQueries } from './Shop'
 
 const resolvers = {
@@ -7,6 +7,9 @@ const resolvers = {
     ...shopQueries,
     ...burgerQueries,
     ...markQueries
+  },
+  Mutation: {
+    ...markMutations
   }
 }
 export default resolvers

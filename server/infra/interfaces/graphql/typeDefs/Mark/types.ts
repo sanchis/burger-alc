@@ -5,7 +5,7 @@ const markDefs = gql`
         id: ID!
         mark: Float!
         comment: String!
-        createAt: String!
+        createdAt: String!
 # TODO maybe create custom type for dateTime?
     }
 `

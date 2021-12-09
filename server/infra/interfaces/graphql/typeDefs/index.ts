@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server-micro'
 import { burgerTypes, burgerQueries } from './Burger'
-import { markQueries, markTypes } from './Mark'
+import { markMutations, markQueries, markTypes } from './Mark'
 import { shopQueries, shopTypes } from './Shop'
 
 const typeDefs = gql`
@@ -12,6 +12,10 @@ const typeDefs = gql`
         ${shopQueries}
         ${burgerQueries}
         ${markQueries}
+    }
+
+    type Mutation {
+        ${markMutations}
     }
 `
 export default typeDefs
