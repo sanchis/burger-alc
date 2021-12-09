@@ -40,6 +40,17 @@ query MarksInBurger($burgerId: String!) {
     id
     mark
     comment
-    createAt
+    createdAt
   }
 }`
+
+export const CREATE_MARK = `
+mutation Mutation($burgerId: String!, $mark: Int!, $comment: String!) {
+  createMark(burgerId: $burgerId, mark: $mark, comment: $comment) {
+    id
+    mark
+    createdAt
+    comment
+  }
+}
+`
