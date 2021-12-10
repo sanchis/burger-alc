@@ -19,7 +19,6 @@ export default function ModalCreateMark ({ onClose, isOpen, burger }: Props): Re
         <ModalBody>
           <CreateMarkForm burger={burger} onCreate={onClose} onCancel={onClose} />
         </ModalBody>
-
         <ModalFooter />
       </ModalContent>
     </Modal>

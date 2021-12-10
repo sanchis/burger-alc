@@ -1,12 +1,12 @@
 import { AccordionButton, AccordionItem, AccordionPanel } from '@chakra-ui/accordion'
 import { Button } from '@chakra-ui/button'
 import { Image } from '@chakra-ui/image'
-import { Divider, Flex, HStack, Stack, Text } from '@chakra-ui/layout'
+import { Divider, Flex, Stack, Text } from '@chakra-ui/layout'
 import { useDisclosure } from '@chakra-ui/react'
 import { BurgerInShop } from 'front/domain/entities/Burger'
 import React, { ReactElement } from 'react'
-import BurgerMarks from './components/BurgerMarks'
-import ModalCreateMark from './components/ModalCreateMark'
+import BurgerMarks from '../BurgerMarks'
+import ModalCreateMark from '../ModalCreateMark'
 
 interface Props{
   burger: BurgerInShop
@@ -29,16 +29,20 @@ export default function BurgerComponent ({ burger }: Props): ReactElement {
             <Stack flex='1'>
               <Text ml='2' flex='1'>{burger.description}</Text>
               <Divider />
-              <HStack>
-                <AccordionButton p='0' w='auto'>
-                  <Button>{burger.numberOfMarks} Reseñas realizadas</Button>
+              <Stack direction={['column', 'column', 'column', 'row']} spacing='2'>
+                <AccordionButton
+                  w='auto' display='inline-flex' as={Button} _hover={{
+                    background: 'brand.300'
+                  }}
+                >
+                  {burger.numberOfMarks} Reseñas realizadas
                 </AccordionButton>
                 <Button onClick={onOpen}>Crear reseña</Button>
-              </HStack>
+              </Stack>
             </Stack>
           </Flex>
           <ModalCreateMark isOpen={isOpen} onClose={onClose} burger={burger} />
-          <AccordionPanel pb={4}>
+          <AccordionPanel p='0'>
             <BurgerMarks burger={burger} expanded={isExpanded} />
           </AccordionPanel>
         </>
