@@ -29,13 +29,6 @@ export default function BurgerMarks ({ burger, expanded }: Props): ReactElement 
       {!loading && marks.length === 0
         ? <Heading size='md' align='center'>Por el momento no tenemos ninguna reseña sobre esta hamburguesa😔. Animate a crear una!</Heading>
         : null}
-
-      {/*
-        <Divider />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. */}
     </>
   )
 }
