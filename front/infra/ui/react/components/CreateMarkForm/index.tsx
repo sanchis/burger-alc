@@ -32,7 +32,7 @@ export default function CreateMarkForm ({ burger, onCreate, onCancel }: Props): 
   }
 
   function validComment (): boolean {
-    return comment.trim() !== ''
+    return comment.trim() !== '' && comment.trim().length < 280
   }
 
   function onSubmit (event: FormEvent<HTMLFormElement>): void {
