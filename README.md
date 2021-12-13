@@ -37,7 +37,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 // TODO
 
 - [ ] Create spinner for navigate 
-- [ ] Create form for create mark
+- [x] Create form for create mark
 - [ ] Sign with auth0
 - [ ] Request new shop
 - [ ] Admin panel for shop owners
