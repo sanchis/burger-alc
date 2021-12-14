@@ -24,11 +24,10 @@ export default function CreateMarkForm ({ burger, onCreate, onCancel }: Props): 
   const [comment, setComment] = useState('')
 
   function incrementMark (): void {
-    setMark(mark => mark > 9 ? mark : mark + 1)
+    setMark(currentMark => currentMark > 9 ? currentMark : currentMark + 1)
   }
-
   function decrementMark (): void {
-    setMark(mark => mark < 1 ? mark : mark - 1)
+    setMark(currentMark => currentMark < 1 ? currentMark : currentMark - 1)
   }
 
   function validComment (): boolean {
@@ -76,16 +75,17 @@ export default function CreateMarkForm ({ burger, onCreate, onCancel }: Props): 
         <Heading mb='2' size='md'>Puntuación</Heading>
       </Center>
       <Center>
-        <Button mr='4' variant='outline' onClick={decrementMark}>
+        <Button mr='4' variant='outline' data-testid='decrement-btn' onClick={decrementMark}>
           <MdHorizontalRule />
         </Button>
-        <Heading>{mark}</Heading>
-        <Button ml='4' variant='outline' onClick={incrementMark}>
+        <Heading data-testid='mark'>{mark}</Heading>
+        <Button ml='4' variant='outline' data-testid='increment-btn' onClick={incrementMark}>
           <MdAdd />
         </Button>
       </Center>
       <Divider mt='3' mb='3' />
       <Textarea
+        data-testid='comment-input'
         value={comment}
         isRequired
         isInvalid={!validComment()}
@@ -100,16 +100,16 @@ export default function CreateMarkForm ({ burger, onCreate, onCancel }: Props): 
 
   return (
     <>
-      <form onSubmit={onSubmit} id='createMark'>
+      <form onSubmit={onSubmit} data-testid='createMarkForm'>
         {loading
-          ? <Center><Spinner size='xl' /></Center>
+          ? <Center><Spinner data-testid='loading-indicator' size='xl' /></Center>
           : formInputs}
 
         <Flex mt='4' justifyContent='flex-end'>
-          <Button variant='outline' mr={3} onClick={onCancel}>
+          <Button variant='outline' data-testid='cancel-btn' mr={3} onClick={onCancel}>
             Cerrar
           </Button>
-          <Button type='submit' isLoading={loading}>Enviar</Button>
+          <Button type='submit' data-testid='submit-btn' isLoading={loading}>Enviar</Button>
         </Flex>
       </form>
 
