@@ -1,12 +1,12 @@
 import { useCallback, useState } from 'react'
 
-interface HookModel<Response, ParamsType>{
+export interface UseLazyCallerModel<Response, ParamsType>{
   loading: boolean
   error: any
   run: (params: ParamsType) => Promise<Response>
   data: Response | undefined
 }
-export function useLazyCaller<Response, ParamType = any> (promiseFn: (params: ParamType) => Promise<Response>): HookModel<Response, ParamType> {
+export function useLazyCaller<Response, ParamType = any> (promiseFn: (params: ParamType) => Promise<Response>): UseLazyCallerModel<Response, ParamType> {
   const [loading, setLoading] = useState(false)
   const [data, setData] = useState<Response>()
   const [error, setError] = useState()
